@@ -1,0 +1,90 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Welcome</title>
+
+</head>
+
+<body>
+	<h1>Welcome to Spring MVC</h1>
+	<div class="welcome-container">
+		<h1 class="pp">Welcome to Payment Portal</h1>
+		<p>Your trusted platform for easy transactions!</p>
+		<a th:href="@{/payments}">View Payments</a>
+	</div>
+
+	<style>
+	    body {
+	        margin: 0;
+	        padding: 0;
+	        font-family: 'Poppins', sans-serif;
+	        height: 100vh;
+	        background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+	        display: flex;
+	        flex-direction: column;
+	        justify-content: center;
+	        align-items: center;
+	        text-align: center;
+	    }
+
+	    h1 {
+	        font-size: 52px;
+	        color: #ffffff;
+	        margin-bottom: 20px;
+	        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+	    }
+		
+       .pp{
+		
+		        font-size: 52px;
+		        color: blue;
+		        margin-bottom: 20px;
+		        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+		    }
+	   
+	    .welcome-container {
+	        background: white;
+	        padding: 50px 30px;
+	        border-radius: 20px;
+	        width: 400px;
+	        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+	        animation: fadeIn 1.5s ease-in-out;
+	    }
+
+	    p {
+	        font-size: 20px;
+	        color: #666;
+	        margin-bottom: 30px;
+	    }
+
+	    a {
+	        text-decoration: none;
+	        background-color: #4CAF50;
+	        color: white;
+	        padding: 12px 25px;
+	        border-radius: 8px;
+	        font-size: 18px;
+	        transition: background-color 0.3s, transform 0.3s;
+	    }
+
+	    a:hover {
+	        background-color: #45a049;
+	        transform: scale(1.05);
+	    }
+
+	    @keyframes fadeIn {
+	        from {
+	            opacity: 0;
+	            transform: scale(0.9);
+	        }
+	        to {
+	            opacity: 1;
+	            transform: scale(1);
+	        }
+	    }
+	</style>
+
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+	<h1>ADD PAYMENT DETAILS</h1>
+	<h3>Enter the details you wanna to Add</h3>
+	<form th:action="@{/payments/add}" method="post" th:object="${payment}">
+		<input type="text" placeholder="enter payment method" th:field="*{paymentMethod}" />
+		<input type="text" placeholder="enter payment address" th:field="*{paymentAddress}" />
+		<input type="number" placeholder="enter payment pin" th:field="*{paymentPin}" />
+		<input type="text" placeholder="enter payment status" th:field="*{status}" />
+		<button type="submit">add Payment</button>
+	</form>
+
+
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			margin: 0;
+		}
+
+		h1,
+		h3 {
+			text-align: center;
+			color: #333;
+			margin: 10px 0;
+		}
+
+		form {
+			margin-top: 20px;
+			background-color: #fff;
+			padding: 30px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			width: 300px;
+		}
+
+		input {
+			display: block;
+			width: 100%;
+			margin-bottom: 15px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			font-size: 14px;
+		}
+
+		input:focus {
+			border-color: #007bff;
+			outline: none;
+			box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+		}
+
+		button {
+			width: 100%;
+			padding: 10px;
+			background-color: #007bff;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #0056b3;
+		}
+	</style>
+
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+	<h1>All Payment Details</h1>
+
+	<table border="5">
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>paymentMethod</th>
+				<th>paymentAddress</th>
+				<th>paymentPin</th>
+				<th>status</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="payment:${payments}">
+				<td th:text="${payment.id}"></td>
+				<td th:text="${payment.paymentMethod}"></td>
+				<td th:text="${payment.paymentAddress}"></td>
+				<td th:text="${payment.paymentPin}"></td>
+				<td th:text="${payment.status}"></td>
+				<td><a class="update" th:href="@{/payments/update/{id}(id=${payment.id})}">Update</a>
+					<a class="delete" th:href="@{/payments/delete/{id}(id=${payment.id})}">Delete</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="button-container">
+		<button><a th:href="@{/payments/add}">Add Payments</a></button>
+	</div>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f9f9f9;
+			padding: 20px;
+		}
+
+		h1 {
+			text-align: center;
+			color: #333;
+		}
+
+		a {
+			text-decoration: none;
+			color: #007bff;
+			margin-right: 10px;
+		}
+
+		a:hover {
+			text-decoration: underline;
+			color: red;
+
+		}
+
+		table {
+			width: 80%;
+			margin: 20px auto;
+			border-collapse: collapse;
+			background-color: #fff;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		th,
+		td {
+			padding: 12px 15px;
+			text-align: center;
+			border: 1px solid #ddd;
+		}
+
+		th {
+			background-color: #007bff;
+			color: white;
+		}
+
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+
+		tr:hover {
+			background-color: #f1f1f1;
+		}
+
+		.update,
+		.delete {
+			color: #007bff;
+			text-decoration: none;
+			padding: 5px;
+		}
+
+		/* hover effects */
+		.update:hover {
+			color: green;
+			text-decoration: underline;
+		}
+
+		.delete-link:hover {
+			color: red;
+			text-decoration: underline;
+		}
+
+
+
+		/* Styling the button */
+		button {
+			padding: 12px 25px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 18px;
+			text-align: center;
+			display: inline-block;
+		}
+
+		button a {
+			color: white;
+			text-decoration: none;
+		}
+
+		button:hover {
+			background-color: #45a049;
+			transform: scale(1.05);
+		}
+
+
+		.button-container {
+			margin-top: 20px;
+			text-align: center;
+			
+		}
+	</style>
+
+
+
+
+
+</body>
+
+</html>
